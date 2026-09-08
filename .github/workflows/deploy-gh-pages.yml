@@ -19,8 +19,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
         env:
-          BASE_URL: /it-tools/
-      - run: cp dist/index.html dist/404.html && touch dist/.nojekyll
+          BASE_URL: /
+      - run: cp dist/index.html dist/404.html && touch dist/.nojekyll && echo "it-tools.leizhang.win" > dist/CNAME
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
